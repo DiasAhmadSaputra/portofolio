@@ -1,233 +1,1196 @@
 <!doctype html>
 <html lang="id">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Dias Ahmad Saputra | Portofolio</title>
-<meta name="description" content="Portfolio of Dias Ahmad Saputra, Informatics student and web developer building Flask web apps and AI image classification.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#EEF2ED;--card:#F8FAF6;--ink:#12201A;--mut:#506357;--line:#CDD8CF;--g:#1E6B47;--on:#fff;--hi:#E1EAE0;--f:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--b:"Public Sans","Segoe UI",system-ui,sans-serif;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1913;--card:#16231B;--ink:#E8F1E9;--mut:#9DB3A3;--line:#2A3E31;--g:#6FD39A;--on:#0F1913;--hi:#1B2B21;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0F1913;--card:#16231B;--ink:#E8F1E9;--mut:#9DB3A3;--line:#2A3E31;--g:#6FD39A;--on:#0F1913;--hi:#1B2B21;color-scheme:dark}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:5rem}
-body{font:400 1rem/1.65 var(--b);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:"";position:fixed;top:0;left:0;right:0;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:25}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--g);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 1.4rem}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar-in{display:flex;align-items:center;gap:1rem;height:3.6rem}
-.mark{font:800 1.25rem var(--f);text-decoration:none}
-#menu{display:flex;gap:.2rem;margin-left:auto;overflow-x:auto;scrollbar-width:none}
-#menu a{text-decoration:none;font-weight:600;font-size:.9rem;padding:.35rem .75rem;border-radius:8px;color:var(--mut);white-space:nowrap}
-#menu a:hover{color:var(--ink)}
-#menu a.on{background:var(--hi);color:var(--ink)}
-.lang{display:flex;border:1px solid var(--line);border-radius:8px;padding:2px}
-.lang button{font:700 .78rem var(--b);border:0;background:transparent;color:var(--mut);padding:.28rem .6rem;border-radius:6px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.btn{display:inline-flex;align-items:center;padding:.7rem 1.2rem;border-radius:10px;font:700 .95rem var(--b);text-decoration:none;border:2px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;transition:transform .15s,background .15s}
-.btn.fill{background:var(--g);border-color:var(--g);color:var(--on)}
-.btn:hover{transform:translateY(-2px)}.btn.go{background:var(--c);border-color:var(--c);color:#fff;padding:.85rem 1.7rem;font-size:1rem;box-shadow:0 10px 22px -10px var(--c)}.btn.go:hover{box-shadow:0 14px 26px -10px var(--c)}
-.btns{display:flex;gap:.8rem;flex-wrap:wrap}
-.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:3.5rem;align-items:center;padding:4.5rem 0 3rem}
-.pill{display:inline-flex;align-items:center;gap:.55rem;padding:.3rem .85rem;border:1px solid var(--line);border-radius:999px;background:var(--card);font-weight:600;font-size:.85rem;color:var(--mut);margin-bottom:1.4rem}
-.pill i{width:.55rem;height:.55rem;border-radius:50%;background:var(--g)}
-h1{font:800 clamp(2.4rem,6vw,4.2rem)/1.02 var(--f);letter-spacing:-.035em;max-width:11em}
-.role{margin-top:1rem;font:600 1.1rem/1.4 var(--f);color:var(--g)}
-.intro{max-width:34rem;color:var(--mut);margin:1.2rem 0 1.8rem}
-.photo{justify-self:center;width:min(320px,80vw)}
-.frame{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;border:1px solid var(--ink);background:var(--hi);display:grid;place-items:center;font:800 5rem var(--f);color:var(--g)}
-.frame img{width:100%;height:100%;object-fit:cover}
-.frame::after{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--g);box-shadow:0 0 22px 5px var(--g);animation:scan 2.2s ease-in-out .4s 1 both}
-@keyframes scan{0%{top:0;opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
-.box{position:absolute;inset:9% 8% 14%;border:2px solid var(--g);border-radius:6px;animation:in .5s ease-out 2.2s both}
-.box span{position:absolute;left:-2px;top:-2px;transform:translateY(-100%);background:var(--g);color:var(--on);font-weight:700;font-size:.78rem;padding:.2rem .6rem;border-radius:6px 6px 0 0;white-space:nowrap}
-@keyframes in{from{opacity:0}to{opacity:1}}
-.sp{display:grid;grid-template-columns:1fr 1fr;gap:.35rem .8rem;margin-top:1rem;font-size:.8rem;font-weight:600;color:var(--mut)}
-.sp span{display:flex;align-items:center;gap:.45rem}
-.sp i{width:.7rem;height:.7rem;border-radius:3px;flex:none}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;border-top:1px solid var(--ink);padding-top:1.4rem}
-.stats b{display:block;font:800 2.3rem/1.1 var(--f);letter-spacing:-.02em}
-.stats span{color:var(--mut);font-size:.9rem}
-section{padding:4rem 0 1rem}
-h2{font:800 clamp(1.7rem,3.4vw,2.4rem)/1.1 var(--f);letter-spacing:-.025em;margin-bottom:1.8rem}
-.two{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem}
-h3{font:700 1.05rem var(--f);margin-bottom:.7rem}
-.about p{font-size:1.08rem}
-.pts{list-style:none;padding:0;display:grid;gap:.6rem}
-.pts li{display:flex;gap:.7rem;color:var(--mut)}
-.pts li::before{content:"";width:.5rem;height:.5rem;margin-top:.6rem;border-radius:2px;background:var(--g);flex:none}
-.sk{margin-top:2.5rem;border-top:1px solid var(--line)}
-.sk>div{display:grid;grid-template-columns:11rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);align-items:baseline}
-.sk h4{font:700 .95rem var(--b);color:var(--mut)}
-.chips{display:flex;flex-wrap:wrap;gap:.4rem}
-.chips span,.tech span{padding:.22rem .7rem;border-radius:8px;background:var(--card);border:1px solid var(--line);font-weight:600;font-size:.84rem}
-.row{display:grid;grid-template-columns:.9fr 1.1fr;gap:2.8rem;align-items:center;padding:2.2rem;margin-bottom:1.6rem;border-radius:22px;border:1px solid color-mix(in srgb,var(--c) 40%,var(--line));background:color-mix(in srgb,var(--c) 14%,var(--bg))}
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Dias Ahmad Saputra | Portofolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Dias Ahmad Saputra, Informatics student and web developer building Flask web apps and AI image classification."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #eef2ed;
+        --card: #f8faf6;
+        --ink: #12201a;
+        --mut: #506357;
+        --line: #cdd8cf;
+        --g: #1e6b47;
+        --on: #fff;
+        --hi: #e1eae0;
+        --f: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+        --b: "Public Sans", "Segoe UI", system-ui, sans-serif;
+        color-scheme: light;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0f1913;
+          --card: #16231b;
+          --ink: #e8f1e9;
+          --mut: #9db3a3;
+          --line: #2a3e31;
+          --g: #6fd39a;
+          --on: #0f1913;
+          --hi: #1b2b21;
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #0f1913;
+        --card: #16231b;
+        --ink: #e8f1e9;
+        --mut: #9db3a3;
+        --line: #2a3e31;
+        --g: #6fd39a;
+        --on: #0f1913;
+        --hi: #1b2b21;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5rem;
+      }
+      body {
+        font: 400 1rem/1.65 var(--b);
+        color: var(--ink);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: env(safe-area-inset-top, 0px);
+        background: var(--bg);
+        z-index: 25;
+      }
+      a {
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 3px solid var(--g);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+      .wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 1.4rem;
+      }
+      header {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 20;
+        background: color-mix(in srgb, var(--bg) 90%, transparent);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+      }
+      .bar-in {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        height: 3.6rem;
+      }
+      .mark {
+        font: 800 1.25rem var(--f);
+        text-decoration: none;
+      }
+      #menu {
+        display: flex;
+        gap: 0.2rem;
+        margin-left: auto;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      #menu a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.35rem 0.75rem;
+        border-radius: 8px;
+        color: var(--mut);
+        white-space: nowrap;
+      }
+      #menu a:hover {
+        color: var(--ink);
+      }
+      #menu a.on {
+        background: var(--hi);
+        color: var(--ink);
+      }
+      .lang {
+        display: flex;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 2px;
+      }
+      .lang button {
+        font: 700 0.78rem var(--b);
+        border: 0;
+        background: transparent;
+        color: var(--mut);
+        padding: 0.28rem 0.6rem;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .lang button[aria-pressed="true"] {
+        background: var(--ink);
+        color: var(--bg);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.7rem 1.2rem;
+        border-radius: 10px;
+        font: 700 0.95rem var(--b);
+        text-decoration: none;
+        border: 2px solid var(--ink);
+        color: var(--ink);
+        background: transparent;
+        cursor: pointer;
+        transition:
+          transform 0.15s,
+          background 0.15s;
+      }
+      .btn.fill {
+        background: var(--g);
+        border-color: var(--g);
+        color: var(--on);
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn.go {
+        background: var(--c);
+        border-color: var(--c);
+        color: #fff;
+        padding: 0.85rem 1.7rem;
+        font-size: 1rem;
+        box-shadow: 0 10px 22px -10px var(--c);
+      }
+      .btn.go:hover {
+        box-shadow: 0 14px 26px -10px var(--c);
+      }
+      .btns {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3.5rem;
+        align-items: center;
+        padding: 4.5rem 0 3rem;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.3rem 0.85rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--card);
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--mut);
+        margin-bottom: 1.4rem;
+      }
+      .pill i {
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background: var(--g);
+      }
+      h1 {
+        font: 800 clamp(2.4rem, 6vw, 4.2rem)/1.02 var(--f);
+        letter-spacing: -0.035em;
+        max-width: 11em;
+      }
+      .role {
+        margin-top: 1rem;
+        font: 600 1.1rem/1.4 var(--f);
+        color: var(--g);
+      }
+      .intro {
+        max-width: 34rem;
+        color: var(--mut);
+        margin: 1.2rem 0 1.8rem;
+      }
+      .photo {
+        justify-self: center;
+        width: min(320px, 80vw);
+      }
+      .frame {
+        position: relative;
+        aspect-ratio: 4/5;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--ink);
+        background: var(--hi);
+        display: grid;
+        place-items: center;
+        font: 800 5rem var(--f);
+        color: var(--g);
+      }
+      .frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .frame::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 3px;
+        background: var(--g);
+        box-shadow: 0 0 22px 5px var(--g);
+        animation: scan 2.2s ease-in-out 0.4s 1 both;
+      }
+      @keyframes scan {
+        0% {
+          top: 0;
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          top: 100%;
+          opacity: 0;
+        }
+      }
+      .box {
+        position: absolute;
+        inset: 9% 8% 14%;
+        border: 2px solid var(--g);
+        border-radius: 6px;
+        animation: in 0.5s ease-out 2.2s both;
+      }
+      .box span {
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        transform: translateY(-100%);
+        background: var(--g);
+        color: var(--on);
+        font-weight: 700;
+        font-size: 0.78rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 6px 6px 0 0;
+        white-space: nowrap;
+      }
+      @keyframes in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .sp {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.35rem 0.8rem;
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--mut);
+      }
+      .sp span {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+      .sp i {
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 3px;
+        flex: none;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        border-top: 1px solid var(--ink);
+        padding-top: 1.4rem;
+      }
+      .stats b {
+        display: block;
+        font: 800 2.3rem/1.1 var(--f);
+        letter-spacing: -0.02em;
+      }
+      .stats span {
+        color: var(--mut);
+        font-size: 0.9rem;
+      }
+      section {
+        padding: 4rem 0 1rem;
+      }
+      h2 {
+        font: 800 clamp(1.7rem, 3.4vw, 2.4rem)/1.1 var(--f);
+        letter-spacing: -0.025em;
+        margin-bottom: 1.8rem;
+      }
+      .two {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 3rem;
+      }
+      h3 {
+        font: 700 1.05rem var(--f);
+        margin-bottom: 0.7rem;
+      }
+      .about p {
+        font-size: 1.08rem;
+      }
+      .pts {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 0.6rem;
+      }
+      .pts li {
+        display: flex;
+        gap: 0.7rem;
+        color: var(--mut);
+      }
+      .pts li::before {
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-top: 0.6rem;
+        border-radius: 2px;
+        background: var(--g);
+        flex: none;
+      }
+      .sk {
+        margin-top: 2.5rem;
+        border-top: 1px solid var(--line);
+      }
+      .sk > div {
+        display: grid;
+        grid-template-columns: 11rem 1fr;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--line);
+        align-items: baseline;
+      }
+      .sk h4 {
+        font: 700 0.95rem var(--b);
+        color: var(--mut);
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .chips span,
+      .tech span {
+        padding: 0.22rem 0.7rem;
+        border-radius: 8px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        font-weight: 600;
+        font-size: 0.84rem;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 2.8rem;
+        align-items: center;
+        padding: 2.2rem;
+        margin-bottom: 1.6rem;
+        border-radius: 22px;
+        border: 1px solid color-mix(in srgb, var(--c) 40%, var(--line));
+        background: color-mix(in srgb, var(--c) 14%, var(--bg));
+      }
 
-.row.flip .info{order:2}
-.row h3{font:800 1.8rem var(--f);letter-spacing:-.02em}
-.tech{display:flex;flex-wrap:wrap;gap:.4rem;margin:.9rem 0 1.1rem}
-.row p{color:var(--mut);max-width:32rem}
-.row .btns{margin-top:1.4rem}
-.win{border-radius:12px;overflow:hidden;border:1px solid var(--ink);background:var(--card);box-shadow:8px 8px 0 var(--c);transition:transform .2s,box-shadow .2s}
-.row:hover .win{transform:translate(-3px,-3px);box-shadow:11px 11px 0 var(--c)}
-.bar{display:flex;gap:.4rem;padding:.6rem .8rem;border-bottom:1px solid var(--ink);background:var(--hi)}
-.bar i{width:.6rem;height:.6rem;border-radius:50%;background:var(--line)}
-.scr{aspect-ratio:16/10;background:var(--hi)}
-.scr img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}.scr.live{aspect-ratio:auto;height:min(78vh,640px)}.scr iframe{width:100%;height:100%;border:0;display:block;background:#fff}
-.ph{width:100%;height:100%;display:grid;place-items:center;font:800 clamp(1.6rem,4vw,2.6rem) var(--f);color:#fff;background:var(--c);letter-spacing:-.02em}
-.tl{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem}
-.item+.item{margin-top:1.3rem;padding-top:1.3rem;border-top:1px solid var(--line)}
-.item h4{font:800 1.1rem var(--f)}
-.sub{color:var(--mut);font-size:.92rem}
-.date{display:inline-block;margin:.5rem 0;font-weight:700;font-size:.8rem;padding:.2rem .6rem;border-radius:8px;background:var(--hi)}
-.item ul{list-style:none;padding:0;display:grid;gap:.4rem;margin-top:.4rem;color:var(--mut)}
-.item li{display:flex;gap:.7rem}
-.item li::before{content:"";width:.5rem;height:.5rem;margin-top:.6rem;border-radius:2px;background:var(--g);flex:none}
-.cta{background:var(--g);color:var(--on);border-radius:20px;padding:2.8rem 2.4rem}
-.cta h2{max-width:34rem;margin-bottom:1.4rem}
-.mail{display:inline-block;font:800 clamp(1.1rem,2.6vw,1.6rem) var(--f);text-decoration:none;border-bottom:3px solid currentColor;word-break:break-all}
-.loc{margin-top:1rem;font-weight:600}
-.soc{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.3rem}
-.soc a{padding:.4rem 1rem;font-size:.9rem;border:2px solid currentColor;border-radius:999px;font-weight:700;text-decoration:none}
-.soc a:hover{background:var(--on);color:var(--g)}
-form{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.5rem}
-label{display:block;font-weight:700;margin-bottom:.35rem;font-size:.88rem}
-input,textarea{width:100%;padding:.7rem .95rem;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:500 .95rem var(--b)}
-textarea{min-height:130px;resize:vertical}
-.full{grid-column:1/-1}
-footer{padding:2.5rem 0 3rem;text-align:center;color:var(--mut);font-size:.92rem}
-@media(max-width:880px){.hero,.row,.tl,.two{grid-template-columns:1fr}.hero{padding-top:2.5rem;gap:2.5rem}.row.flip .info{order:0}.stats{grid-template-columns:1fr 1fr}.sk>div{grid-template-columns:1fr;gap:.5rem}form{grid-template-columns:1fr}}
-@media(max-width:560px){.row{padding:1.3rem}.mark{display:none}.cta{padding:2.2rem 1.4rem}}
-@media(prefers-reduced-motion:reduce){*,::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
-</head>
-<body>
-<header><div class="wrap bar-in">
-<a class="mark" href="#home">Dias</a>
-<nav id="menu" aria-label="Main"></nav>
-<div class="lang" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="id">ID</button></div>
-</div></header>
-<main class="wrap">
-<section class="hero" id="home" style="padding-bottom:3rem">
-<div>
-<div class="pill"><i></i><span data-i="status"></span></div>
-<h1 id="hi"></h1>
-<p class="role" data-d="role"></p>
-<p class="intro" data-d="intro"></p>
-<div class="btns"><a class="btn fill" href="#projects" data-i="work"></a><a class="btn" id="cv" download data-i="cv"></a></div>
-</div>
-<div class="photo">
-<div class="frame" id="frame"><div class="box"><span data-i="scan"></span></div></div>
-<div class="sp" id="sp"></div>
-</div>
-</section>
-<div class="stats" id="stats"></div>
-<section id="about">
-<h2 data-i="about"></h2>
-<div class="two">
-<div class="about"><h3 data-i="hello"></h3><p data-d="about"></p></div>
-<div><h3 data-i="does"></h3><ul class="pts" id="does"></ul></div>
-</div>
-<div class="sk" id="skills"></div>
-</section>
-<section id="projects"><h2 data-i="projects"></h2><div id="rows"></div></section>
-<section id="experience">
-<h2 data-i="exp"></h2>
-<div class="tl">
-<div><h3 data-i="work2"></h3><div id="expl"></div></div>
-<div><h3 data-i="edu"></h3><div id="edul"></div></div>
-</div>
-</section>
-<section id="contact">
-<div class="cta"><h2 data-i="cta"></h2><a class="mail" id="mail"></a><p class="loc" id="loc"></p><div class="soc" id="soc"></div></div>
-<form id="form">
-<div><label for="n" data-i="fn"></label><input id="n" required></div>
-<div><label for="e" data-i="fe"></label><input id="e" type="email" placeholder="you@example.com" required></div>
-<div class="full"><label for="m" data-i="fm"></label><textarea id="m" required></textarea></div>
-<div class="full"><button class="btn fill" type="submit" data-i="send"></button></div>
-</form>
-</section>
-</main>
-<footer>© <span id="yr"></span> Dias Ahmad Saputra</footer>
-<script>
-var UI={nav:{en:["Home","About","Projects","Experience","Contact"],id:["Beranda","Tentang","Proyek","Pengalaman","Kontak"]},
-status:{en:"Open to internships and collaboration",id:"Terbuka untuk magang dan kolaborasi"},
-hi:{en:"Hi, I’m Dias Ahmad Saputra.",id:"Halo, saya Dias Ahmad Saputra."},
-work:{en:"See my work",id:"Lihat karya saya"},cv:{en:"Download CV",id:"Unduh CV"},
-scan:{en:"Detected: Web Developer",id:"Terdeteksi: Web Developer"},
-about:{en:"About",id:"Tentang"},hello:{en:"Hello",id:"Perkenalan"},does:{en:"What I do",id:"Yang saya kerjakan"},
-tools:{en:"Skills & tools",id:"Keahlian & alat"},projects:{en:"Projects",id:"Proyek"},
-exp:{en:"Experience & education",id:"Pengalaman & pendidikan"},work2:{en:"Work experience",id:"Pengalaman kerja"},edu:{en:"Education",id:"Pendidikan"},
-cta:{en:"Got an idea? Let’s build it together.",id:"Punya ide? Mari wujudkan bersama."},
-fn:{en:"Name",id:"Nama"},fe:{en:"Email",id:"Email"},fm:{en:"Message",id:"Pesan"},send:{en:"Send message",id:"Kirim pesan"},
-subj:{en:"Portfolio message from ",id:"Pesan dari portofolio: "}};
-var SP=[["glass","kaca","#3FA9A0"],["cardboard","kardus","#B9843F"],["paper","kertas","#5B7FD6"],["metal","logam","#8A94A0"],["plastic","plastik","#E0A526"],["non-waste","bukan sampah","#D5543F"]];
-var DATA={
-role:{en:"Informatics student · Web Developer · AI Image Classification",id:"Mahasiswa Informatika · Web Developer · Klasifikasi Gambar AI"},
-intro:{en:"I build web apps with Flask, PHP, and MySQL, and train image-classification models with TensorFlow, from database design to deployment.",id:"Saya membangun aplikasi web dengan Flask, PHP, dan MySQL, serta melatih model klasifikasi gambar dengan TensorFlow, dari perancangan database sampai deployment."},
-about:{en:"Informatics student (semester 5) at Universitas Bhayangkara Jakarta Raya with a background in Computer and Network Engineering. I build web apps with Flask, PHP, and MySQL, as well as image-classification models based on TensorFlow. I am used to handling projects from database design all the way to deployment.",id:"Mahasiswa Informatika semester 5 di Universitas Bhayangkara Jakarta Raya dengan latar belakang Teknik Komputer dan Jaringan. Membangun aplikasi web dengan Flask, PHP, dan MySQL, serta model klasifikasi gambar berbasis TensorFlow. Terbiasa mengerjakan proyek dari perancangan database sampai deployment."},
-stats:[["2",{en:"main projects",id:"proyek utama"}],["~2,400",{en:"images to train PilahNexa",id:"gambar untuk melatih PilahNexa"}],["6",{en:"waste categories recognized",id:"kategori sampah dikenali"}],["4",{en:"user roles in SmartLaundry",id:"peran pengguna di SmartLaundry"}]],
-does:[{en:"Web apps with Flask, PHP, and MySQL",id:"Aplikasi web dengan Flask, PHP, dan MySQL"},{en:"Image classification with TensorFlow and MobileNetV2",id:"Klasifikasi gambar dengan TensorFlow dan MobileNetV2"},{en:"Google login, simulated QRIS payment, and Web Push notifications",id:"Login Google, pembayaran QRIS simulasi, dan notifikasi Web Push"},{en:"LAN networking, computer assembly, and sales flyer & poster design",id:"Jaringan LAN, merakit komputer, dan desain flyer & poster penjualan"}],
-skills:[[{en:"Programming & web",id:"Pemrograman & web"},["Python","Flask","PHP","MySQL","JavaScript","HTML","CSS"]],[{en:"AI",id:"AI"},["TensorFlow","Keras","MobileNetV2",{en:"Image classification",id:"Klasifikasi gambar"}]],[{en:"Network & hardware",id:"Jaringan & hardware"},[{en:"LAN networking",id:"Jaringan LAN"},{en:"Computer assembly",id:"Merakit komputer"}]],[{en:"Design",id:"Desain"},[{en:"Sales flyers & posters",id:"Flyer & poster penjualan"}]],[{en:"Tools",id:"Alat"},["Git","GitHub","VS Code","XAMPP","Vercel"]]],
-projects:[
-{title:"PilahNexa AI",c:"#1E6B47",tech:["Python","TensorFlow","Flask"],desc:{en:"Waste classification app from photos. A MobileNetV2 model trained on about 2,400 images recognizes 6 categories: glass, cardboard, paper, metal, plastic, and non-waste. The Flask web app scans photos, saves scan history, and shows waste-reduction recommendations, with an AI chat assistant and Google login.",id:"Aplikasi klasifikasi sampah dari foto. Model MobileNetV2 dilatih dengan sekitar 2.400 gambar untuk mengenali 6 kategori: kaca, kardus, kertas, logam, plastik, dan bukan sampah. Aplikasi web Flask memindai foto, menyimpan riwayat scan, dan menampilkan rekomendasi pengurangan sampah, dilengkapi asisten AI (chat) dan login akun Google."},img:"images/pilahnexa-desktop.jpg",demo:"https://pilahnexaai.vercel.app",embed:"https://pilahnexaai.vercel.app/demo-masuk",links:[["GitHub","https://github.com/DiasAhmadSaputra/PilahNexa"]]},
-{title:"SmartLaundry",c:"#3B6FD6",tech:["Flask","MySQL","Vercel"],desc:{en:"Laundry management app, migrated from PHP to Flask with admin, cashier, driver, and customer roles. Features pickup & delivery orders, a driver page, public laundry tracking (order code and QR), simulated QRIS payment, and Web Push notifications to customers. Deployed on Vercel.",id:"Aplikasi manajemen laundry, dimigrasikan dari PHP ke Flask dengan peran admin, kasir, driver, dan pelanggan. Fitur: pesan antar-jemput, halaman driver, pelacakan cucian publik (kode pesanan dan QR), pembayaran QRIS simulasi, dan notifikasi Web Push ke pelanggan. Dideploy ke Vercel."},img:"images/smartlaundry-desktop.jpg",demo:"https://smart-laundry-dz.vercel.app",embed:"https://smart-laundry-dz.vercel.app",links:[["GitHub","https://github.com/DiasAhmadSaputra/SmartLaundry"]]}],
-experience:[{title:"Warehouse Staff (Internship)",org:"PT. Padma Soode Indonesia",date:{en:"Nov 2022 – Mar 2023",id:"Nov 2022 – Mar 2023"},points:[{en:"Received and returned goods in the warehouse.",id:"Menerima dan mengembalikan barang di gudang."},{en:"Picked and prepared items to fulfill customer orders.",id:"Mengambil dan menyiapkan barang untuk memenuhi pesanan konsumen."},{en:"Entered goods-receipt data into the company system or documents.",id:"Memasukkan data penerimaan barang ke sistem atau dokumen perusahaan."}]}],
-education:[{title:"Universitas Bhayangkara Jakarta Raya",sub:{en:"S1 Informatics · Semester 5 (in progress)",id:"S1 Informatika · semester 5 (sedang menempuh)"}},{title:"SMK Teratai Putih Global 3 Bekasi",sub:{en:"Computer and Network Engineering · 2021–2024",id:"Teknik Komputer dan Jaringan · 2021–2024"}}],
-location:{en:"Bekasi, West Java",id:"Bekasi, Jawa Barat"},email:"diazzahmd@gmail.com",cv:"CV_Dias_Ahmad_Saputra.pdf",photo:"images/profile.jpg",social:[["GitHub","https://github.com/DiasAhmadSaputra"]]};
+      .row.flip .info {
+        order: 2;
+      }
+      .row h3 {
+        font: 800 1.8rem var(--f);
+        letter-spacing: -0.02em;
+      }
+      .tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 0.9rem 0 1.1rem;
+      }
+      .row p {
+        color: var(--mut);
+        max-width: 32rem;
+      }
+      .row .btns {
+        margin-top: 1.4rem;
+      }
+      .win {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--ink);
+        background: var(--card);
+        box-shadow: 8px 8px 0 var(--c);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+      .row:hover .win {
+        transform: translate(-3px, -3px);
+        box-shadow: 11px 11px 0 var(--c);
+      }
+      .bar {
+        display: flex;
+        gap: 0.4rem;
+        padding: 0.6rem 0.8rem;
+        border-bottom: 1px solid var(--ink);
+        background: var(--hi);
+      }
+      .bar i {
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background: var(--line);
+      }
+      .scr {
+        aspect-ratio: 16/10;
+        background: var(--hi);
+      }
+      .scr img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+      }
+      .scr.live {
+        aspect-ratio: auto;
+        height: min(78vh, 640px);
+      }
+      .scr iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+        background: #fff;
+      }
+      .ph {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        font: 800 clamp(1.6rem, 4vw, 2.6rem) var(--f);
+        color: #fff;
+        background: var(--c);
+        letter-spacing: -0.02em;
+      }
+      .tl {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3rem;
+      }
+      .item + .item {
+        margin-top: 1.3rem;
+        padding-top: 1.3rem;
+        border-top: 1px solid var(--line);
+      }
+      .item h4 {
+        font: 800 1.1rem var(--f);
+      }
+      .sub {
+        color: var(--mut);
+        font-size: 0.92rem;
+      }
+      .date {
+        display: inline-block;
+        margin: 0.5rem 0;
+        font-weight: 700;
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 8px;
+        background: var(--hi);
+      }
+      .item ul {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 0.4rem;
+        margin-top: 0.4rem;
+        color: var(--mut);
+      }
+      .item li {
+        display: flex;
+        gap: 0.7rem;
+      }
+      .item li::before {
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-top: 0.6rem;
+        border-radius: 2px;
+        background: var(--g);
+        flex: none;
+      }
+      .cta {
+        background: var(--g);
+        color: var(--on);
+        border-radius: 20px;
+        padding: 2.8rem 2.4rem;
+      }
+      .cta h2 {
+        max-width: 34rem;
+        margin-bottom: 1.4rem;
+      }
+      .mail {
+        display: inline-block;
+        font: 800 clamp(1.1rem, 2.6vw, 1.6rem) var(--f);
+        text-decoration: none;
+        border-bottom: 3px solid currentColor;
+        word-break: break-all;
+      }
+      .loc {
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+      .soc {
+        display: flex;
+        gap: 0.7rem;
+        flex-wrap: wrap;
+        margin-top: 1.3rem;
+      }
+      .soc a {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+        border: 2px solid currentColor;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .soc a:hover {
+        background: var(--on);
+        color: var(--g);
+      }
+      form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1.2rem;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 1.5rem;
+      }
+      label {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 0.35rem;
+        font-size: 0.88rem;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 0.7rem 0.95rem;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: var(--bg);
+        color: var(--ink);
+        font: 500 0.95rem var(--b);
+      }
+      textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
+      .full {
+        grid-column: 1/-1;
+      }
+      footer {
+        padding: 2.5rem 0 3rem;
+        text-align: center;
+        color: var(--mut);
+        font-size: 0.92rem;
+      }
+      @media (max-width: 880px) {
+        .hero,
+        .row,
+        .tl,
+        .two {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          padding-top: 2.5rem;
+          gap: 2.5rem;
+        }
+        .row.flip .info {
+          order: 0;
+        }
+        .stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        .sk > div {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+        }
+        form {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 560px) {
+        .row {
+          padding: 1.3rem;
+        }
+        .mark {
+          display: none;
+        }
+        .cta {
+          padding: 2.2rem 1.4rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::after {
+          animation: none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap bar-in">
+        <a class="mark" href="#home">Dias</a>
+        <nav id="menu" aria-label="Main"></nav>
+        <div class="lang" role="group" aria-label="Language">
+          <button data-l="en">EN</button><button data-l="id">ID</button>
+        </div>
+      </div>
+    </header>
+    <main class="wrap">
+      <section class="hero" id="home" style="padding-bottom: 3rem">
+        <div>
+          <div class="pill"><i></i><span data-i="status"></span></div>
+          <h1 id="hi"></h1>
+          <p class="role" data-d="role"></p>
+          <p class="intro" data-d="intro"></p>
+          <div class="btns">
+            <a class="btn fill" href="#projects" data-i="work"></a
+            ><a class="btn" id="cv" download data-i="cv"></a>
+          </div>
+        </div>
+        <div class="photo">
+          <div class="frame" id="frame">
+            <div class="box"><span data-i="scan"></span></div>
+          </div>
+          <div class="sp" id="sp"></div>
+        </div>
+      </section>
+      <div class="stats" id="stats"></div>
+      <section id="about">
+        <h2 data-i="about"></h2>
+        <div class="two">
+          <div class="about">
+            <h3 data-i="hello"></h3>
+            <p data-d="about"></p>
+          </div>
+          <div>
+            <h3 data-i="does"></h3>
+            <ul class="pts" id="does"></ul>
+          </div>
+        </div>
+        <div class="sk" id="skills"></div>
+      </section>
+      <section id="projects">
+        <h2 data-i="projects"></h2>
+        <div id="rows"></div>
+      </section>
+      <section id="experience">
+        <h2 data-i="exp"></h2>
+        <div class="tl">
+          <div>
+            <h3 data-i="work2"></h3>
+            <div id="expl"></div>
+          </div>
+          <div>
+            <h3 data-i="edu"></h3>
+            <div id="edul"></div>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <div class="cta">
+          <h2 data-i="cta"></h2>
+          <a class="mail" id="mail"></a>
+          <p class="loc" id="loc"></p>
+          <div class="soc" id="soc"></div>
+        </div>
+        <form id="form">
+          <div>
+            <label for="n" data-i="fn"></label><input id="n" required />
+          </div>
+          <div>
+            <label for="e" data-i="fe"></label
+            ><input
+              id="e"
+              type="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="full">
+            <label for="m" data-i="fm"></label
+            ><textarea id="m" required></textarea>
+          </div>
+          <div class="full">
+            <button class="btn fill" type="submit" data-i="send"></button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer>© <span id="yr"></span> Dias Ahmad Saputra</footer>
+    <script>
+      var UI = {
+        nav: {
+          en: ["Home", "About", "Projects", "Experience", "Contact"],
+          id: ["Beranda", "Tentang", "Proyek", "Pengalaman", "Kontak"],
+        },
+        status: {
+          en: "Open to internships and collaboration",
+          id: "Terbuka untuk magang dan kolaborasi",
+        },
+        hi: {
+          en: "Hi, I’m Dias Ahmad Saputra.",
+          id: "Halo, saya Dias Ahmad Saputra.",
+        },
+        work: { en: "See my work", id: "Lihat karya saya" },
+        cv: { en: "Download CV", id: "Unduh CV" },
+        scan: {
+          en: "Detected: Web Developer",
+          id: "Terdeteksi: Web Developer",
+        },
+        about: { en: "About", id: "Tentang" },
+        hello: { en: "Hello", id: "Perkenalan" },
+        does: { en: "What I do", id: "Yang saya kerjakan" },
+        tools: { en: "Skills & tools", id: "Keahlian & alat" },
+        projects: { en: "Projects", id: "Proyek" },
+        exp: { en: "Experience & education", id: "Pengalaman & pendidikan" },
+        work2: { en: "Work experience", id: "Pengalaman kerja" },
+        edu: { en: "Education", id: "Pendidikan" },
+        cta: {
+          en: "Got an idea? Let’s build it together.",
+          id: "Punya ide? Mari wujudkan bersama.",
+        },
+        fn: { en: "Name", id: "Nama" },
+        fe: { en: "Email", id: "Email" },
+        fm: { en: "Message", id: "Pesan" },
+        send: { en: "Send message", id: "Kirim pesan" },
+        subj: { en: "Portfolio message from ", id: "Pesan dari portofolio: " },
+      };
+      var SP = [
+        ["glass", "kaca", "#3FA9A0"],
+        ["cardboard", "kardus", "#B9843F"],
+        ["paper", "kertas", "#5B7FD6"],
+        ["metal", "logam", "#8A94A0"],
+        ["plastic", "plastik", "#E0A526"],
+        ["non-waste", "bukan sampah", "#D5543F"],
+      ];
+      var DATA = {
+        role: {
+          en: "Informatics student · Web Developer · AI Image Classification",
+          id: "Mahasiswa Informatika · Web Developer · Klasifikasi Gambar AI",
+        },
+        intro: {
+          en: "I build web apps with Flask, PHP, and MySQL, and train image-classification models with TensorFlow, from database design to deployment.",
+          id: "Saya membangun aplikasi web dengan Flask, PHP, dan MySQL, serta melatih model klasifikasi gambar dengan TensorFlow, dari perancangan database sampai deployment.",
+        },
+        about: {
+          en: "Informatics student (semester 5) at Universitas Bhayangkara Jakarta Raya with a background in Computer and Network Engineering. I build web apps with Flask, PHP, and MySQL, as well as image-classification models based on TensorFlow. I am used to handling projects from database design all the way to deployment.",
+          id: "Mahasiswa Informatika semester 5 di Universitas Bhayangkara Jakarta Raya dengan latar belakang Teknik Komputer dan Jaringan. Membangun aplikasi web dengan Flask, PHP, dan MySQL, serta model klasifikasi gambar berbasis TensorFlow. Terbiasa mengerjakan proyek dari perancangan database sampai deployment.",
+        },
+        stats: [
+          ["2", { en: "main projects", id: "proyek utama" }],
+          [
+            "~2,400",
+            {
+              en: "images to train PilahNexa",
+              id: "gambar untuk melatih PilahNexa",
+            },
+          ],
+          [
+            "6",
+            {
+              en: "waste categories recognized",
+              id: "kategori sampah dikenali",
+            },
+          ],
+          [
+            "4",
+            {
+              en: "user roles in SmartLaundry",
+              id: "peran pengguna di SmartLaundry",
+            },
+          ],
+        ],
+        does: [
+          {
+            en: "Web apps with Flask, PHP, and MySQL",
+            id: "Aplikasi web dengan Flask, PHP, dan MySQL",
+          },
+          {
+            en: "Image classification with TensorFlow and MobileNetV2",
+            id: "Klasifikasi gambar dengan TensorFlow dan MobileNetV2",
+          },
+          {
+            en: "Google login, simulated QRIS payment, and Web Push notifications",
+            id: "Login Google, pembayaran QRIS simulasi, dan notifikasi Web Push",
+          },
+          {
+            en: "LAN networking, computer assembly, and sales flyer & poster design",
+            id: "Jaringan LAN, merakit komputer, dan desain flyer & poster penjualan",
+          },
+        ],
+        skills: [
+          [
+            { en: "Programming & web", id: "Pemrograman & web" },
+            ["Python", "Flask", "PHP", "MySQL", "JavaScript", "HTML", "CSS"],
+          ],
+          [
+            { en: "AI", id: "AI" },
+            [
+              "TensorFlow",
+              "Keras",
+              "MobileNetV2",
+              { en: "Image classification", id: "Klasifikasi gambar" },
+            ],
+          ],
+          [
+            { en: "Network & hardware", id: "Jaringan & hardware" },
+            [
+              { en: "LAN networking", id: "Jaringan LAN" },
+              { en: "Computer assembly", id: "Merakit komputer" },
+            ],
+          ],
+          [
+            { en: "Design", id: "Desain" },
+            [{ en: "Sales flyers & posters", id: "Flyer & poster penjualan" }],
+          ],
+          [
+            { en: "Tools", id: "Alat" },
+            ["Git", "GitHub", "VS Code", "XAMPP", "Vercel"],
+          ],
+        ],
+        projects: [
+          {
+            title: "PilahNexa AI",
+            c: "#1E6B47",
+            tech: ["Python", "TensorFlow", "Flask"],
+            desc: {
+              en: "Waste classification app from photos. A MobileNetV2 model trained on about 2,400 images recognizes 6 categories: glass, cardboard, paper, metal, plastic, and non-waste. The Flask web app scans photos, saves scan history, and shows waste-reduction recommendations, with an AI chat assistant and Google login.",
+              id: "Aplikasi klasifikasi sampah dari foto. Model MobileNetV2 dilatih dengan sekitar 2.400 gambar untuk mengenali 6 kategori: kaca, kardus, kertas, logam, plastik, dan bukan sampah. Aplikasi web Flask memindai foto, menyimpan riwayat scan, dan menampilkan rekomendasi pengurangan sampah, dilengkapi asisten AI (chat) dan login akun Google.",
+            },
+            img: "images/pilahnexa-desktop.jpg",
+            demo: "https://pilahnexaai.vercel.app",
+            embed: "https://pilahnexaai.vercel.app/demo-masuk",
+            links: [
+              ["GitHub", "https://github.com/DiasAhmadSaputra/PilahNexa"],
+            ],
+          },
+          {
+            title: "SmartLaundry",
+            c: "#3B6FD6",
+            tech: ["Flask", "MySQL", "Vercel"],
+            desc: {
+              en: "Laundry management app, migrated from PHP to Flask with admin, cashier, driver, and customer roles. Features pickup & delivery orders, a driver page, public laundry tracking (order code and QR), simulated QRIS payment, and Web Push notifications to customers. Deployed on Vercel.",
+              id: "Aplikasi manajemen laundry, dimigrasikan dari PHP ke Flask dengan peran admin, kasir, driver, dan pelanggan. Fitur: pesan antar-jemput, halaman driver, pelacakan cucian publik (kode pesanan dan QR), pembayaran QRIS simulasi, dan notifikasi Web Push ke pelanggan. Dideploy ke Vercel.",
+            },
+            img: "images/smartlaundry-desktop.jpg",
+            demo: "https://smart-laundry-dz.vercel.app",
+            embed: "https://smart-laundry-dz.vercel.app",
+            links: [
+              ["GitHub", "https://github.com/DiasAhmadSaputra/SmartLaundry"],
+            ],
+          },
+        ],
+        experience: [
+          {
+            title: "Warehouse Staff (Internship)",
+            org: "PT. Padma Soode Indonesia",
+            date: { en: "Nov 2022 – Mar 2023", id: "Nov 2022 – Mar 2023" },
+            points: [
+              {
+                en: "Received and returned goods in the warehouse.",
+                id: "Menerima dan mengembalikan barang di gudang.",
+              },
+              {
+                en: "Picked and prepared items to fulfill customer orders.",
+                id: "Mengambil dan menyiapkan barang untuk memenuhi pesanan konsumen.",
+              },
+              {
+                en: "Entered goods-receipt data into the company system or documents.",
+                id: "Memasukkan data penerimaan barang ke sistem atau dokumen perusahaan.",
+              },
+            ],
+          },
+        ],
+        education: [
+          {
+            title: "Universitas Bhayangkara Jakarta Raya",
+            sub: {
+              en: "S1 Informatics · Semester 5 (in progress)",
+              id: "S1 Informatika · semester 5 (sedang menempuh)",
+            },
+          },
+          {
+            title: "SMK Teratai Putih Global 3 Bekasi",
+            sub: {
+              en: "Computer and Network Engineering · 2021–2024",
+              id: "Teknik Komputer dan Jaringan · 2021–2024",
+            },
+          },
+        ],
+        location: { en: "Bekasi, West Java", id: "Bekasi, Jawa Barat" },
+        email: "diazzahmd@gmail.com",
+        cv: "CV Dias Ahmad Saputra.pdf",
+        photo: "images/profile.jpg",
+        social: [["GitHub", "https://github.com/DiasAhmadSaputra"]],
+      };
 
-var $=function(i){return document.getElementById(i)},lang="en";
-try{lang=localStorage.getItem("lang")||(/^id/i.test(navigator.language)?"id":"en")}catch(e){}
-function L(o){return typeof o==="string"?o:o[lang]||o.en}
-function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e}
-function fill(id,items,fn){var n=$(id);n.textContent="";items.forEach(function(x,i){n.appendChild(fn(x,i))})}
-function render(){
-document.documentElement.lang=lang;
-document.querySelectorAll("[data-i]").forEach(function(n){n.textContent=L(UI[n.dataset.i])});
-document.querySelectorAll("[data-d]").forEach(function(n){n.textContent=L(DATA[n.dataset.d])});
-document.querySelectorAll(".lang button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.l===lang)});
-$("hi").textContent=L(UI.hi);
-$("n").placeholder=lang==="id"?"Nama kamu":"Your name";
-$("m").placeholder=lang==="id"?"Ceritakan proyekmu":"Tell me about your project";
-var navs=["#home","#about","#projects","#experience","#contact"];
-fill("menu",UI.nav[lang],function(t,i){var a=el("a","",t);a.href=navs[i];a.dataset.h=navs[i];return a});
-fill("sp",SP,function(s){var d=el("span"),i=el("i");i.style.background=s[2];d.appendChild(i);d.appendChild(document.createTextNode(lang==="id"?s[1]:s[0]));return d});
-fill("stats",DATA.stats,function(s){var d=el("div");d.appendChild(el("b","",s[0]));d.appendChild(el("span","",L(s[1])));return d});
-fill("does",DATA.does,function(s){return el("li","",L(s))});
-fill("skills",DATA.skills,function(g){var d=el("div");d.appendChild(el("h4","",L(g[0])));var c=el("div","chips");g[1].forEach(function(s){c.appendChild(el("span","",L(s)))});d.appendChild(c);return d});
-fill("rows",DATA.projects,function(p,i){
-var r=el("article","row"+(i%2?" flip":""));r.style.setProperty("--c",p.c);
-var info=el("div","info");info.appendChild(el("h3","",p.title));
-var t=el("div","tech");p.tech.forEach(function(x){t.appendChild(el("span","",x))});info.appendChild(t);
-info.appendChild(el("p","",L(p.desc)));
-var b=el("div","btns");if(p.demo){var go=el("a","btn go",lang==="id"?"Buka web":"Open website");go.href=p.demo;go.target="_blank";go.rel="noopener";b.appendChild(go)}
-p.links.forEach(function(l,k){var a=el("a","btn"+(p.demo?"":(k?"":" fill")),l[0]);if(l[0]==="Live site"&&lang==="id")a.textContent="Situs live";a.href=l[1];a.target="_blank";a.rel="noopener";b.appendChild(a)});
-info.appendChild(b);
-var w=el("div","win"),bar=el("div","bar");bar.innerHTML="<i></i><i></i><i></i>";
-var scr=el("div","scr"),pic=new Image();pic.alt=p.title;pic.loading="lazy";pic.src=p.img;
-pic.onerror=function(){pic.replaceWith(el("div","ph",p.title))};
-if(p.embed){var f=document.createElement("iframe");f.src=p.embed;f.title=p.title;f.loading="lazy";f.allow="geolocation; clipboard-write; camera";scr.classList.add("live");scr.appendChild(f)}else scr.appendChild(pic);w.appendChild(bar);w.appendChild(scr);r.appendChild(info);r.appendChild(w);return r});
-fill("expl",DATA.experience,function(x){var d=el("div","item");d.appendChild(el("h4","",x.title));d.appendChild(el("div","sub",x.org));d.appendChild(el("span","date",L(x.date)));var u=el("ul");x.points.forEach(function(p){u.appendChild(el("li","",L(p)))});d.appendChild(u);return d});
-fill("edul",DATA.education,function(x){var d=el("div","item");d.appendChild(el("h4","",x.title));d.appendChild(el("div","sub",L(x.sub)));return d});
-$("loc").textContent="📍 "+L(DATA.location);
-$("cv").href=DATA.cv;$("mail").href="mailto:"+DATA.email;$("mail").textContent=DATA.email;
-fill("soc",DATA.social,function(s){var a=el("a","",s[0]);a.href=s[1];a.target="_blank";a.rel="noopener";return a});
-document.title="Dias Ahmad Saputra | "+(lang==="id"?"Portofolio":"Portfolio");
-}
-document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){lang=b.dataset.l;try{localStorage.setItem("lang",lang)}catch(e){}render()})});
-$("yr").textContent=new Date().getFullYear();
-var im=new Image();im.alt="Dias Ahmad Saputra";im.src=DATA.photo;
-im.onload=function(){$("frame").insertBefore(im,$("frame").firstChild)};
-im.onerror=function(){$("frame").insertBefore(document.createTextNode("D"),$("frame").firstChild)};
-$("form").addEventListener("submit",function(e){e.preventDefault();var body=$("m").value+"\n\n— "+$("n").value+" ("+$("e").value+")";location.href="mailto:"+DATA.email+"?subject="+encodeURIComponent(L(UI.subj)+$("n").value)+"&body="+encodeURIComponent(body)});
-render();
-var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)document.querySelectorAll("#menu a").forEach(function(a){a.classList.toggle("on",a.dataset.h==="#"+x.target.id)})})},{rootMargin:"-45% 0px -50% 0px"});
-document.querySelectorAll("section[id]").forEach(function(s){io.observe(s)});
-</script>
-</body>
+      var $ = function (i) {
+          return document.getElementById(i);
+        },
+        lang = "en";
+      try {
+        lang =
+          localStorage.getItem("lang") ||
+          (/^id/i.test(navigator.language) ? "id" : "en");
+      } catch (e) {}
+      function L(o) {
+        return typeof o === "string" ? o : o[lang] || o.en;
+      }
+      function el(t, c, h) {
+        var e = document.createElement(t);
+        if (c) e.className = c;
+        if (h != null) e.textContent = h;
+        return e;
+      }
+      function fill(id, items, fn) {
+        var n = $(id);
+        n.textContent = "";
+        items.forEach(function (x, i) {
+          n.appendChild(fn(x, i));
+        });
+      }
+      function render() {
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i]").forEach(function (n) {
+          n.textContent = L(UI[n.dataset.i]);
+        });
+        document.querySelectorAll("[data-d]").forEach(function (n) {
+          n.textContent = L(DATA[n.dataset.d]);
+        });
+        document.querySelectorAll(".lang button").forEach(function (b) {
+          b.setAttribute("aria-pressed", b.dataset.l === lang);
+        });
+        $("hi").textContent = L(UI.hi);
+        $("n").placeholder = lang === "id" ? "Nama kamu" : "Your name";
+        $("m").placeholder =
+          lang === "id" ? "Ceritakan proyekmu" : "Tell me about your project";
+        var navs = ["#home", "#about", "#projects", "#experience", "#contact"];
+        fill("menu", UI.nav[lang], function (t, i) {
+          var a = el("a", "", t);
+          a.href = navs[i];
+          a.dataset.h = navs[i];
+          return a;
+        });
+        fill("sp", SP, function (s) {
+          var d = el("span"),
+            i = el("i");
+          i.style.background = s[2];
+          d.appendChild(i);
+          d.appendChild(document.createTextNode(lang === "id" ? s[1] : s[0]));
+          return d;
+        });
+        fill("stats", DATA.stats, function (s) {
+          var d = el("div");
+          d.appendChild(el("b", "", s[0]));
+          d.appendChild(el("span", "", L(s[1])));
+          return d;
+        });
+        fill("does", DATA.does, function (s) {
+          return el("li", "", L(s));
+        });
+        fill("skills", DATA.skills, function (g) {
+          var d = el("div");
+          d.appendChild(el("h4", "", L(g[0])));
+          var c = el("div", "chips");
+          g[1].forEach(function (s) {
+            c.appendChild(el("span", "", L(s)));
+          });
+          d.appendChild(c);
+          return d;
+        });
+        fill("rows", DATA.projects, function (p, i) {
+          var r = el("article", "row" + (i % 2 ? " flip" : ""));
+          r.style.setProperty("--c", p.c);
+          var info = el("div", "info");
+          info.appendChild(el("h3", "", p.title));
+          var t = el("div", "tech");
+          p.tech.forEach(function (x) {
+            t.appendChild(el("span", "", x));
+          });
+          info.appendChild(t);
+          info.appendChild(el("p", "", L(p.desc)));
+          var b = el("div", "btns");
+          if (p.demo) {
+            var go = el(
+              "a",
+              "btn go",
+              lang === "id" ? "Buka web" : "Open website",
+            );
+            go.href = p.demo;
+            go.target = "_blank";
+            go.rel = "noopener";
+            b.appendChild(go);
+          }
+          p.links.forEach(function (l, k) {
+            var a = el("a", "btn" + (p.demo ? "" : k ? "" : " fill"), l[0]);
+            if (l[0] === "Live site" && lang === "id")
+              a.textContent = "Situs live";
+            a.href = l[1];
+            a.target = "_blank";
+            a.rel = "noopener";
+            b.appendChild(a);
+          });
+          info.appendChild(b);
+          var w = el("div", "win"),
+            bar = el("div", "bar");
+          bar.innerHTML = "<i></i><i></i><i></i>";
+          var scr = el("div", "scr"),
+            pic = new Image();
+          pic.alt = p.title;
+          pic.loading = "lazy";
+          pic.src = p.img;
+          pic.onerror = function () {
+            pic.replaceWith(el("div", "ph", p.title));
+          };
+          if (p.embed) {
+            var f = document.createElement("iframe");
+            f.src = p.embed;
+            f.title = p.title;
+            f.loading = "lazy";
+            f.allow = "geolocation; clipboard-write; camera";
+            scr.classList.add("live");
+            scr.appendChild(f);
+          } else scr.appendChild(pic);
+          w.appendChild(bar);
+          w.appendChild(scr);
+          r.appendChild(info);
+          r.appendChild(w);
+          return r;
+        });
+        fill("expl", DATA.experience, function (x) {
+          var d = el("div", "item");
+          d.appendChild(el("h4", "", x.title));
+          d.appendChild(el("div", "sub", x.org));
+          d.appendChild(el("span", "date", L(x.date)));
+          var u = el("ul");
+          x.points.forEach(function (p) {
+            u.appendChild(el("li", "", L(p)));
+          });
+          d.appendChild(u);
+          return d;
+        });
+        fill("edul", DATA.education, function (x) {
+          var d = el("div", "item");
+          d.appendChild(el("h4", "", x.title));
+          d.appendChild(el("div", "sub", L(x.sub)));
+          return d;
+        });
+        $("loc").textContent = "📍 " + L(DATA.location);
+        $("cv").href = DATA.cv;
+        $("mail").href = "mailto:" + DATA.email;
+        $("mail").textContent = DATA.email;
+        fill("soc", DATA.social, function (s) {
+          var a = el("a", "", s[0]);
+          a.href = s[1];
+          a.target = "_blank";
+          a.rel = "noopener";
+          return a;
+        });
+        document.title =
+          "Dias Ahmad Saputra | " +
+          (lang === "id" ? "Portofolio" : "Portfolio");
+      }
+      document.querySelectorAll(".lang button").forEach(function (b) {
+        b.addEventListener("click", function () {
+          lang = b.dataset.l;
+          try {
+            localStorage.setItem("lang", lang);
+          } catch (e) {}
+          render();
+        });
+      });
+      $("yr").textContent = new Date().getFullYear();
+      var im = new Image();
+      im.alt = "Dias Ahmad Saputra";
+      im.src = DATA.photo;
+      im.onload = function () {
+        $("frame").insertBefore(im, $("frame").firstChild);
+      };
+      im.onerror = function () {
+        $("frame").insertBefore(
+          document.createTextNode("D"),
+          $("frame").firstChild,
+        );
+      };
+      $("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        var body =
+          $("m").value + "\n\n— " + $("n").value + " (" + $("e").value + ")";
+        location.href =
+          "mailto:" +
+          DATA.email +
+          "?subject=" +
+          encodeURIComponent(L(UI.subj) + $("n").value) +
+          "&body=" +
+          encodeURIComponent(body);
+      });
+      render();
+      var io = new IntersectionObserver(
+        function (es) {
+          es.forEach(function (x) {
+            if (x.isIntersecting)
+              document.querySelectorAll("#menu a").forEach(function (a) {
+                a.classList.toggle("on", a.dataset.h === "#" + x.target.id);
+              });
+          });
+        },
+        { rootMargin: "-45% 0px -50% 0px" },
+      );
+      document.querySelectorAll("section[id]").forEach(function (s) {
+        io.observe(s);
+      });
+    </script>
+  </body>
 </html>
